@@ -1,0 +1,169 @@
+<html>
+<head>
+
+    <link rel="stylesheet" href="style.css">
+    <title>Library Management System</title>
+</head>
+<body>
+
+    <header>
+        <h1>Library Management System</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#" onclick="redirectToHome()">Home</a></li>
+            <li><a href="#" onclick="showBooks()">Books</a></li>
+            <li><a href="#" onclick="showMembers()">Members</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="center-container">
+            <div class="login-form">
+                
+                <form >
+                    <h2>Login</h2>
+                    <label for="username" >Username:</label>
+                    <input type="text" id="username" name="username" required>
+
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="center-container button">
+        <button onclick="openSignupModal()" >Sign Up</button>
+        </div>
+        <!-- Signup Modal -->
+        <div id="signupModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeSignupModal()">&times;</span>
+                <div class="signup-form">
+                    <form>
+                        <h2>Sign Up</h2>
+                        <label for="newUsername">Username:</label>
+                        <input type="text" id="newUsername" name="newUsername" required>
+
+                        <label for="newPassword">Password:</label>
+                        <input type="password" id="newPassword" name="newPassword" required>
+
+                        <label for="confirmPassword">Confirm Password:</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+                        <button type="submit">Sign Up</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function openSignupModal() {
+                var modal = document.getElementById("signupModal");
+                modal.style.display = "flex"; 
+            }
+
+            function closeSignupModal() {
+                var modal = document.getElementById("signupModal");
+                modal.style.display = "none";
+            }
+        function showBooks() {
+            var booksModal = document.getElementById("booksModal");
+            booksModal.style.display = "block";
+            var booksData = [
+                { title: "To Kill a Mockingbird", author: "Harper Lee", quantity: 10 },
+                { title: "1984", author: "George Orwell", quantity: 5 },
+                { title: "Pride and Prejudice", author: "Jane Austen", quantity: 9 },
+                { title: "The Great Gatsby", author: "F. Scott Fitzgerald", quantity: 12 },
+                { title: "The Catcher in the Rye", author: "J.D. Salinger", quantity: 10 },
+                { title: "Harry Potter and the Sorcerer's Stone", author: "J.K. Rowling", quantity: 8 },
+                { title: "The Lord of the Rings", author: "J.R.R. Tolkien", quantity: 9 }
+            ];
+
+            var booksBody = document.getElementById("booksBody");
+            booksBody.innerHTML = ""; 
+            booksData.forEach(function(book) {
+                var row = booksBody.insertRow();
+                var cellTitle = row.insertCell(0);
+                var cellAuthor = row.insertCell(1);
+                var cellQuantity = row.insertCell(2);
+
+                cellTitle.textContent = book.title;
+                cellAuthor.textContent = book.author;
+                cellQuantity.textContent = book.quantity;
+            });
+        }
+        function showMembers() {
+            showModal('membersModal');
+            var membersData = [
+                { name: "Anwesh",id: 11008 },
+                { name: "Dhanush",id: 11009 },
+                { name: "Hari",id: 11013 },
+                { name: "Hrithik",id: 11043 },
+                { name: "Sathvik",id: 11044 }
+            ];
+
+            var membersList = document.getElementById("membersList");
+            membersList.innerHTML = ""; 
+            membersData.forEach(function(member) {
+                var li = document.createElement("li");
+                li.textContent = `ID: ${member.id} - ${member.name}`;
+                membersList.appendChild(li);
+            });
+        }
+        function closeModal(modalId) {
+            var modal = document.getElementById(modalId);
+            modal.style.display = "none";
+        }
+        function showModal(modalId) {
+            var modal = document.getElementById(modalId);
+            modal.style.display = "block";
+        }
+        function closeBooksModal() {
+            var booksModal = document.getElementById("booksModal");
+            booksModal.style.display = "none";
+        }
+        function redirectToHome() {
+            window.location.href = "index.html";
+        }
+
+        </script>
+    </main>
+
+    <footer>
+        <p> Contact us: anwesh772@gmail.com</p>
+    </footer>
+    <div id="booksModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeBooksModal()">&times;</span>
+            <h2 class="my-custom-heading">List of Books</h2>
+            <table id="booksTable">
+                <thead>
+                    <tr>
+                        <th class="my-custom-heading">Title</th>
+                        <th class="my-custom-heading">Author</th>
+                        <th class="my-custom-heading">Quantity</th>
+                    </tr>
+                </thead>
+                <tbody id="booksBody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+     <div id="membersModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('membersModal')">&times;</span>
+            <h2>List of Members</h2>
+            <ul id="membersList">
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

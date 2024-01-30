@@ -1,0 +1,164 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('1.jpg');
+    background-repeat: no-repeat;
+}
+.modal {
+    display: none;
+    position: fixed;
+    top: 175px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #99afe18e;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #000;
+}
+.center-container {
+    text-align: center;
+}
+.center-container img {
+    width: 1200px;
+    height: 750px;
+    margin-bottom:10px;
+
+}
+
+.center-container form {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #6fe8f16f;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(128, 95, 95, 0.1);
+}
+
+.center-container h2 {
+    text-align: center;
+}
+
+.center-container label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.center-container input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+.center-container button {
+    background-color: #45a861;
+    color: #000000;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.center-container .separator {
+    text-align: center;
+    margin: 15px 0;
+    font-weight: bold;
+}
+
+
+header {
+    background-color: #333;
+    color: #f4f4f4;
+    text-align: center;
+    padding: 1em;
+}
+
+nav {
+    background-color: #555;
+    text-align: center; /* Center the text within the nav */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block; /* Make the list inline-block to center it */
+}
+
+nav li {
+    display: inline; /* Display list items inline */
+}
+
+nav a {
+    display: inline-block; /* Make the links inline-block for better spacing */
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+main {
+    padding: 0px;
+}
+
+footer {
+    background-color: #333;
+    color: #ffffff;
+    text-align: center;
+    padding: 1em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+.login-form input{
+    background-color:rgba(198, 170, 221, 0.447);
+    color: rgb(235, 230, 230);
+}
+.signup-form input{
+ background-color: #c2cbf762;
+ color: aliceblue;
+
+}
+form{
+    color: #ffffffb8;
+}
+#booksTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#booksTable th, #booksTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#booksTable th {
+    background-color: #ffffff;
+}
+h2.my-custom-heading {
+    color: #e3ecf2; /* Change this to your preferred color */
+}
+th.my-custom-heading{
+    color: #9dc64c;
+}
